@@ -5,7 +5,18 @@
 	<title>Web Vicosa</title>
 </head>
 <body>
+	<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+	<script>
+	var ref = new Firebase("https://vicosa.firebaseio.com/");
+	function send(form) {
+		ref.push({
+			name: form.elements['name'].value,
+			user: form.elements['user'].value
+		})
+		return false;
+	}
 
+	</script>
 	<h1>Web Vicosa</h1>
 	<form action="#">
 		<input value="nome" name="name" type="text"></input>
